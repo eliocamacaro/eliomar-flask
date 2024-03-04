@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Diabetes prediction</title>
+</head>
+<body>
+   
+    <div class="container">
+        <!-- code here -->
+        <div class="card">
+            <div class="card-image">	
+                <h2 class="card-heading">
+                    Data
+                </h2>
+            </div>
+            <form class="card-form" action="{{ url_for('home')}}" method="POST">
+                <div class="input">
+                    <input name="cons.price.idx" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label"> cons.price.idx</label>
+                </div>
+                            <div class="input">
+                    <input name="euribor3m" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">euribor3m</label>
+                </div>
+                            <div class="input">
+                    <input name="pdays" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Pay Days</label>
+                </div>
+                <div class="input">
+                    <input name="age" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Age</label>
+                </div>
+                <div class="action">
+                    <button type="submit" class="action-button">Submit</button>
+                </div>
+            </form>
+
+            <center><p style="color: darkred; font-weight: bold;">{{ prediction }}</p>
+</center>
+        </div>
+    </div>
+    
+</body>
+</html>
